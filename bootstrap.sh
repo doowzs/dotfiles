@@ -10,6 +10,7 @@ echo "=================================="
 echo "Update apt and install ansible."
 echo "=================================="
 apt update
+apt upgrade -y
 apt install ansible -y
 
 echo "=================================="
