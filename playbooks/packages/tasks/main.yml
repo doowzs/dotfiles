@@ -10,12 +10,15 @@
   apt: name={{ item }} state=latest
   with_items:
     - bash
+    - build-essential
     - curl
     - git
     - htop
+    - nodejs
     - nmap
-    - vim
+    - screen
     - tmux
+    - vim
     - wget
     - zsh
 
@@ -36,10 +39,12 @@
     name: thefuck
     executable: pip3
 
+- name: Install TL;DR
+
 - name: Change shell to ZSH
-  become: yes
-  become_method: sudo
-  user: shell=/bin/zsh name=root
+  npm:
+    name: tldr
+    global: yes
 
 - name: Install FASD
   become: yes
