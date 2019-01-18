@@ -1,4 +1,5 @@
 ---
 - hosts: local
   roles:
-    - role: basic
+    - role: packages
+    - role: dotfiles

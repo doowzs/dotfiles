@@ -1,0 +1,8 @@
+---
+- name: Symlink dotfiles
+  file: src=~/dotfiles/home/{{ item }}
+        dest=~/{{ item }}
+        state=link
+        force=yes
+  with_items:
+    - .bashrc

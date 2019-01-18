@@ -9,9 +9,11 @@ fi
 echo "=================================="
 echo "Update apt and install ansible."
 echo "=================================="
-apt update
-apt upgrade -y
-apt install ansible -y
+if [ -x "$(command -v ansible)" ]; then
+    apt update
+    apt upgrade -y
+    apt install ansible -y
+fi
 
 echo "=================================="
 echo "Now starting ansible job."
