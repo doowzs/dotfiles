@@ -9,7 +9,7 @@ fi
 echo "=================================="
 echo "Update apt and install ansible."
 echo "=================================="
-if [ -x "$(command -v ansible)" ]; then
+if ! [ -x "$(command -v ansible)" ]; then
     apt update
     apt upgrade -y
     apt install ansible -y
