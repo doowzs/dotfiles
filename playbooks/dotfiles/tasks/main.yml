@@ -6,10 +6,3 @@
         force=yes
   with_items:
     - .bashrc
-
-- name: Reapply dotfiles
-  command: source {{ item }}
-  args:
-    chdir: ~
-  with_items:
-    - .bashrc

@@ -16,6 +16,13 @@ if ! [ -x "$(command -v ansible)" ]; then
 fi
 
 echo "=================================="
-echo "Now starting ansible job."
+echo "Starting ansible."
 echo "=================================="
 ansible-playbook -i playbooks/inventory playbooks/install.yml
+
+
+echo "=================================="
+echo "Ansible jobs finished!"
+echo "=================================="
+echo "You need to relogin to take effect!"
+echo "=================================="
