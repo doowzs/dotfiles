@@ -6,3 +6,8 @@
         force=yes
   with_items:
     - .bashrc
+
+- name: Reapply dotfiles
+  command: source {{ item }}
+  with_items:
+    - .bashrc
