@@ -3,7 +3,8 @@
 # Make sure only root can run our script
 if [[ $EUID -ne 0 ]]; then
     echo "Please run this script as root."
-    exit
+    echo "Issue: sudo $0 $*"
+    exit 1
 fi
 
 if ! [ -x "$(command -v ansible)" ]; then

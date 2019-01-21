@@ -1,4 +1,27 @@
 ---
+- name: Change shell to ZSH
+  become: yes
+  become_method: sudo
+  command: chsh -s '/bin/zsh' doowzs
+
+- name: Init Git config - Editor
+  git_config:
+    name: core.editor
+    scope: global
+    value: vim
+
+- name: Init Git config - User name
+  git_config:
+    name: user.name
+    scope: global
+    value: Tianyun Zhang
+
+- name: Init Git config - User email
+  git_config:
+    name: user.email
+    scope: global
+    value: doowzs@qq.com
+
 - name: Symlink dotfiles
   file: src=~/dotfiles/home/{{ item }}
         dest=~/{{ item }}
@@ -6,3 +29,7 @@
         force=yes
   with_items:
     - .bashrc
+    - .zshrc
+    - .oh-my-zsh
+    - .vimrc
+    - .vim_runtime

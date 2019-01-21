@@ -1,4 +1,10 @@
 ---
+- name: Set timezone to Asia/Shanghai
+  file: src=/usr/share/zoneinfo/Asia/Shanghai
+        dest=/etc/localtime
+        state=link
+        force=yes
+
 - name: Update package list
   become: yes
   become_method: sudo
@@ -12,6 +18,7 @@
     - bash
     - build-essential
     - curl
+    - fonts-powerline
     - git
     - htop
     - nmap
@@ -40,17 +47,12 @@
     name: thefuck
     executable: pip3
 
-- name: Install TL;DR
-  npm:
-    name: tldr
-    global: yes
-
-- name: Change shell to ZSH
-  become: yes
-  become_method: sudo
-  user: shell=/bin/zsh name=root
-
 - name: Install FASD
   become: yes
   become_method: sudo
   copy: src=fasd dest=/usr/local/bin/fasd mode=755
+
+- name: Install TL;DR
+  npm:
+    name: tldr
+    global: yes
