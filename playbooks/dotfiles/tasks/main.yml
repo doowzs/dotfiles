@@ -33,3 +33,6 @@
     - .oh-my-zsh
     - .vimrc
     - .vim_runtime
+    - .tmux
+    - .tmux.conf
+    - .tmux.conf.local
