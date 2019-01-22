@@ -22,6 +22,11 @@
     scope: global
     value: doowzs@qq.com
 
+- name: Install AgnosterZak theme
+  copy: src=agnosterzak.zsh-theme 
+        dest=~/dotfiles/home/.oh-my-zsh/themes/agnosterzak.zsh-theme 
+        mode=755
+
 - name: Symlink dotfiles
   file: src=~/dotfiles/home/{{ item }}
         dest=~/{{ item }}
