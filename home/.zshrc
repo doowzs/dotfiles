@@ -97,3 +97,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval $(thefuck --alias)
+alias gfw="ss-local -c /etc/shadowsocks-libev/config.json"
+alias matlab="/usr/local/MATLAB/R2018a/bin/matlab"
