@@ -27,6 +27,11 @@
         dest=~/dotfiles/home/.oh-my-zsh/themes/agnosterzak.zsh-theme 
         mode=755
 
+- name: Install cscope
+  copy: src=cscope.vim
+        dest=~/.vim_runtime/vimrcs/cscope.vim
+        mode=755
+
 - name: Symlink dotfiles
   file: src=~/dotfiles/home/{{ item }}
         dest=~/{{ item }}

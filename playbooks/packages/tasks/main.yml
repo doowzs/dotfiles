@@ -17,6 +17,7 @@
   with_items:
     - bash
     - build-essential
+    - cscope
     - curl
     - fonts-powerline
     - git
