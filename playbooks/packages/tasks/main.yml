@@ -53,8 +53,3 @@
   become: yes
   become_method: sudo
   copy: src=fasd dest=/usr/local/bin/fasd mode=755
-
-- name: Install TL;DR
-  npm:
-    name: tldr
-    global: yes

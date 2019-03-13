@@ -22,16 +22,6 @@
     scope: global
     value: doowzs@qq.com
 
-- name: Install AgnosterZak theme
-  copy: src=agnosterzak.zsh-theme 
-        dest=~/dotfiles/home/.oh-my-zsh/themes/agnosterzak.zsh-theme 
-        mode=755
-
-- name: Install cscope
-  copy: src=cscope.vim
-        dest=~/.vim_runtime/vimrcs/cscope.vim
-        mode=755
-
 - name: Symlink dotfiles
   file: src=~/dotfiles/home/{{ item }}
         dest=~/{{ item }}
@@ -46,3 +36,13 @@
     - .tmux
     - .tmux.conf
     - .tmux.conf.local
+
+- name: Install AgnosterZak theme
+  copy: src=agnosterzak.zsh-theme 
+        dest=/home/doowzs/.oh-my-zsh/themes/agnosterzak.zsh-theme 
+        mode=755
+
+- name: Install cscope
+  copy: src=cscope.vim
+        dest=/home/doowzs/.vim_runtime/vimrcs/cscope.vim
+        mode=755
